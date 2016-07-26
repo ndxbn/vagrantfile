@@ -1,0 +1,6 @@
+# vagrant
+# https://github.com/github/gitignore/blob/master/Global/Vagrant.gitignore
+.vagrant/
+*.log
+
+!.gitkeep
