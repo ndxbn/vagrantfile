@@ -4,8 +4,7 @@ Vagrant.configure("2") do |config|
   config.vm.network :private_network, ip: "192.168.56.17"
   ## synced folder
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder "./synced_folder/home_vagrant_sync", "/home/vagrant/sync", type: "rsync"
-  config.vm.synced_folder "./synced_folder/vagrant", "/vagrant", type: "rsync"
+  config.vm.synced_folder "./synced_folder", "/vagrant", type: "rsync"
 
   # configuration
   ## install docker
