@@ -14,5 +14,11 @@ Vagrant.configure("2") do |config|
   end
 
   ## via apt
-  config.vm.provision "shell", inline: "apt-get -y upgrade"
+  config.vm.provision 'shell', inline: 'apt-get -y upgrade'
+  config.vm.provision 'shell', path: './provisioning/apt-get--install.sh'
+  config.vm.provision 'shell', path: './provisioning/disable_bashrc--root-user.sh'
+  config.vm.provision 'shell', path: './provisioning/disable_bashrc--ubuntu-user.sh'
+
+  # configuration test
+  config.vm.provision 'shell', path: './spec/command_exists.sh'
 end
