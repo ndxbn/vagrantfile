@@ -4,4 +4,5 @@ apt-get -y install \
   gcc \
   jq \
   make \
-  stow
+  stow \
+  zsh

@@ -7,6 +7,7 @@ type wget
 type git
 type jq
 type stow
+type zsh
 
 # manual install
 type hub
