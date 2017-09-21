@@ -1,0 +1,1 @@
+start "" ttermpro /auth=publickey /keyfile="%~dp0.vagrant\machines\default\virtualbox\private_key" ubuntu@192.168.56.17
