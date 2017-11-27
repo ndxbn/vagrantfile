@@ -112,6 +112,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./scripts/install-hub.sh", privileged: false
 
   # after
+  config.vm.provision "shell", path: "./scripts/after--sudo.sh"
   config.vm.provision "shell", path: "./scripts/after.sh", privileged: false
 
   # tests
