@@ -1,0 +1,42 @@
+# トップレベルのキーは、すべて存在している必要がある。
+# 値の変更はしてよいが、キー自体を削除してはいけない。
+# 設定したくなければ、 型を意識して null object 的なものを入れておく。
+box: laravel/homestead
+hostname: familiar.ndxbn.local
+ip: 192.168.56.17
+memory: 4096
+cpus: 4
+
+folders:
+  - map: ./code
+    to: /home/vagrant/code
+
+# site_params の機能はない。
+sites:
+  - name: familiar.ndxbn.local
+    to: /home/vagrant/code/public
+    port: 80
+    ssl: 443
+    php: "7.1" # float not allowed...
+
+databases:
+  - homestead
+
+ports:
+  - host: 8000
+    guest: 80
+  - host: 44300
+    guest: 443
+  - host: 33060
+    guest: 3306
+  - host: 4040
+    guest: 4040
+  - host: 54320
+    guest: 5432
+  - host: 8025
+    guest: 8025
+  - host: 27017
+    guest: 27017
+#     - host: 7777
+#       guest: 777
+#       protocol: udp
