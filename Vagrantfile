@@ -116,5 +116,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./scripts/after.sh", privileged: false
 
   # tests
-  config.vm.provision "shell", path: "./tests/test_command_exists.sh"
+  config.vm.provision "shell", path: "./tests/test_command_exists.sh", privileged: false
 end
