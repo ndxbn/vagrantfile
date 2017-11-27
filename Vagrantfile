@@ -81,8 +81,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./scripts/install-elasticsearch.sh"
 
   # databases
-  ## MongoDB
-  config.vm.provision "shell", path: "./scripts/install-mongo.sh"
   ## apply configuration to each database
   settings["databases"].each do |db|
     config.vm.provision "shell",
@@ -93,10 +91,6 @@ Vagrant.configure("2") do |config|
                         name: "Creating Postgres Database: " + db,
                         path: "./scripts/create-postgres.sh",
                         args: [db]
-    config.vm.provision "shell",
-                        name: "Creating Mongo Database: " + db,
-                        path: "./scripts/create-mongo.sh",
-                        args: [db]
   end
 
   # composer self-update
@@ -104,15 +98,12 @@ Vagrant.configure("2") do |config|
                       name: "Update Composer",
                       inline: "/usr/local/bin/composer self-update && chown -R vagrant:vagrant /home/vagrant/.composer/"
 
-  # ngrok configuration
-  config.vm.provision "shell",
-                      path: "./scripts/create-ngrok.sh",
-                      args: [settings["ip"]],
-                      privileged: false
 
   # install by root
   # jq
   config.vm.provision "shell", path: "./scripts/install-jq.sh"
+  # stow
+  config.vm.provision "shell", path: "./scripts/install-stow.sh"
   # zsh
   config.vm.provision "shell", path: "./scripts/install-zsh.sh"
 
