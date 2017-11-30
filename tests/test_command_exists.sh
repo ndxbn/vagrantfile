@@ -1,13 +1,23 @@
 #!//bin/bash -eu
-# pre-installed
+
+# commands
+## pre-installed
 type curl
 type wget
 
-# apt-get
+## apt-get
 type git
 type jq
 type stow
 type zsh
 
-# manual install
+## manual install
 type hub
+
+
+# servers
+## rabbitmq
+curl localhost:15672
+# somethings on Hadoop framework
+# zookeeper
+hbase zkcli ls /

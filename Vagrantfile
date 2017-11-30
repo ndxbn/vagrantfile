@@ -100,15 +100,16 @@ Vagrant.configure("2") do |config|
 
 
   # install by root
-  # jq
+  # servers
+  config.vm.provision "shell", path: "./scripts/install-rabbitmq.sh"
+  config.vm.provision "shell", path: "./scripts/install-hbase.sh"
+  # config.vm.provision "shell", path: "./scripts/install-zookeeper.sh"
+  # commands
   config.vm.provision "shell", path: "./scripts/install-jq.sh"
-  # stow
   config.vm.provision "shell", path: "./scripts/install-stow.sh"
-  # zsh
   config.vm.provision "shell", path: "./scripts/install-zsh.sh"
 
   # install to vagrant user
-  # hub command
   config.vm.provision "shell", path: "./scripts/install-hub.sh", privileged: false
 
   # after
