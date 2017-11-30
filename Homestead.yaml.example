@@ -17,7 +17,7 @@ sites:
     to: /home/vagrant/code/public
     port: 80
     ssl: 443
-    # float not allowed...
+    # float is not allowed
     php: "7.1"
 
 databases:
