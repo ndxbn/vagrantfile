@@ -10,6 +10,7 @@
 ```bash
 git clone http://github.com/ndxbn/vagrantfile
 cd vagrantfile
+mv Homestead.yaml.example Homestead.yaml
 vagrant up
 ```
 
