@@ -81,6 +81,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./scripts/install-elasticsearch.sh"
 
   # databases
+  ## install
+  config.vm.provision "shell", path: "./scripts/install-mongo.sh"
   ## apply configuration to each database
   settings["databases"].each do |db|
     config.vm.provision "shell",
@@ -90,6 +92,10 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell",
                         name: "Creating Postgres Database: " + db,
                         path: "./scripts/create-postgres.sh",
+                        args: [db]
+    config.vm.provision "shell",
+                        name: "Creating Mongo Database: " + db,
+                        path: "./scripts/create-mongo.sh",
                         args: [db]
   end
 
