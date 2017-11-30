@@ -2,7 +2,7 @@
 # 値の変更はしてよいが、キー自体を削除してはいけない。
 # 設定したくなければ、 型を意識して null object 的なものを入れておく。
 box: laravel/homestead
-hostname: familiar.ndxbn.local
+hostname: ndxbn.local
 ip: 192.168.56.17
 memory: 4096
 cpus: 4
@@ -13,7 +13,7 @@ folders:
 
 # site_params の機能は削除した
 sites:
-  - name: familiar.ndxbn.local
+  - name: ndxbn.local
     to: /home/vagrant/code/public
     port: 80
     ssl: 443
