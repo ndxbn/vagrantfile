@@ -103,7 +103,7 @@ Vagrant.configure("2") do |config|
   # servers
   config.vm.provision "shell", path: "./scripts/install-rabbitmq.sh"
   config.vm.provision "shell", path: "./scripts/install-hbase.sh"
-  # config.vm.provision "shell", path: "./scripts/install-zookeeper.sh"
+  config.vm.provision "shell", path: "./scripts/install-zookeeper.sh"
   # commands
   config.vm.provision "shell", path: "./scripts/install-jq.sh"
   config.vm.provision "shell", path: "./scripts/install-stow.sh"
