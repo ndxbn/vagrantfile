@@ -11,32 +11,38 @@ folders:
   - map: ./code
     to: /home/vagrant/code
 
-# site_params の機能はない。
+# site_params の機能は削除した
 sites:
   - name: familiar.ndxbn.local
     to: /home/vagrant/code/public
     port: 80
     ssl: 443
-    php: "7.1" # float not allowed...
+    # float not allowed...
+    php: "7.1"
 
 databases:
   - homestead
 
 ports:
+  # http
   - host: 8000
     guest: 80
+  # https
   - host: 44300
     guest: 443
+  # MySQL
   - host: 33060
     guest: 3306
-  - host: 4040
-    guest: 4040
+  # PostgreSQL
   - host: 54320
     guest: 5432
+  # MailHog
   - host: 8025
     guest: 8025
+  # MongoDB
   - host: 27017
     guest: 27017
+# e.g.
 #     - host: 7777
 #       guest: 777
 #       protocol: udp
