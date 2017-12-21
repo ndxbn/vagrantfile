@@ -1,3 +1,3 @@
 #!/bin/bash -eu
 
-mv Homestead.yaml{.example,}
+cp Homestead.yaml{.example,}
