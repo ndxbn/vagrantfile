@@ -10,9 +10,11 @@
 ```bash
 git clone http://github.com/ndxbn/vagrantfile
 cd vagrantfile
-mv Homestead.yaml.example Homestead.yaml
+./install.sh
 vagrant up
 ```
+
+If your platform is Windows, use `install.bat` .
 
 ## Coding Style
 
