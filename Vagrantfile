@@ -1,14 +1,16 @@
 # -*- mode: ruby -*-
-# vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ndxbn/grim"
+  config.vm.box = "centos/7"
+  config.vm.hostname = 'ndxbn.local'
 
-  # network
+  # Network
+  # https://www.vagrantup.com/docs/networking/
   config.vm.network :private_network, ip: "192.168.56.17"
 
-  ## synced folder
-  config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder "./code", "/home/vagrant/code", type: "rsync"
-
+  # Provisioning
+  # https://www.vagrantup.com/docs/provisioning/
+  ## My dotfiles pre-install script
+  ## see https://github.com/ndxbn/dotfiles
+  config.vm.provision :shell, path: 'https://raw.githubusercontent.com/ndxbn/dotfiles/master/centos.sh'
 end

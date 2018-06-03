@@ -1,3 +1,0 @@
-# This directory will be copied to guest_machine:/home/vagrant/code
-*
-!.gitignore
